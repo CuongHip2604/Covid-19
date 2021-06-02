@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import CountrySeletor from "./components/CountrySelector";
+import Summary from "./components/Summary";
+import Highlight from "./components/Highlight";
+import { Container, Typography } from "@material-ui/core";
+import moment from "moment";
+import "@fontsource/roboto";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{ marginTop: 20 }}>
+      <div className="app">
+        <Typography variant="h3" component="h3">
+          Covid-19 Data
+        </Typography>
+        <Typography>{moment().format("LLL")}</Typography>
+        <CountrySeletor />
+        <Highlight />
+        <Summary />
+      </div>
+    </Container>
   );
 }
 
